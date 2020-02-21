@@ -1,0 +1,33 @@
+
+int sensor1 = D1;
+int sensor2 = D2;
+int sensor3 = D3;
+int sensor4 = D5;
+
+int sValue1 = 1;
+int sValue2 = 1;
+int sValue3 = 1;
+int sValue4 = 1;
+
+void setup() {
+  pinMode(INPUT, sensor1);
+  pinMode(INPUT, sensor2);
+  pinMode(INPUT, sensor3);
+  pinMode(INPUT, sensor4);
+
+  Serial.begin(115200);
+}
+
+void loop() {
+  sValue1 = digitalRead(sensor1);
+  sValue2 = digitalRead(sensor2);
+  sValue3 = digitalRead(sensor3);
+  sValue4 = digitalRead(sensor4);
+
+  Serial.print("Value1:" + String(sValue1));
+  Serial.print("  Value2:" + String(sValue2));
+  Serial.print("  Value3:" + String(sValue3));
+  Serial.println("   Value4:" + String(sValue4));
+
+  delay(1000);
+}
